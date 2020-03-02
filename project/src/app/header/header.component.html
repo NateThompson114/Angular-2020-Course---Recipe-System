@@ -1,1 +1,37 @@
-<h1>The Header</h1>
+<nav class="navbar navbar-light bg-light navbar-expand-lg">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">Recipe Book</a>
+    </div>
+
+    <button (click)="navBarCollapsed = !navBarCollapsed" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse" [class.collapse]="navBarCollapsed" (window:resize)="navBarCollapsed = true">
+      <ul class="nav navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Recipes</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Shopping List</a></li>
+      </ul>
+
+      <ul (focusout)="manageShow=false" [ngClass]="manageShow ? 'show' : ''" class="nav navbar-nav my-2">
+        <li class="nav-item dropdown">
+          <a
+            (click)="manageShow = !manageShow"
+            class="nav-link dropdown-toggle"
+            href="#" id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            [attr.aria-expanded]="manageShow">
+            Manage
+          </a>
+          <div class="dropdown-menu" [ngClass]="manageShow ? 'show' : ''" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Save Data</a>
+            <a class="dropdown-item" href="#">Fetch Data</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

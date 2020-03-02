@@ -1,0 +1,23 @@
+<div style="min-width: 400px" class="card col-xs-12">
+  <div class="card-body flex-fill">
+    <div class="row flex-fill">
+      <div class="col-xs-10">
+        <div class="row flex-fill">
+          <div class="col">
+            <h5 class="card-title">{{Recipe.name}}e</h5>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class="card-text">{{Recipe.description}}</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col" style="text-align: right">
+        <img [src]="Recipe.imagePath" [alt]="Recipe.name" class="img-responsive" style="max-height: 50px">
+      </div>
+    </div>
+  </div>
+</div>
